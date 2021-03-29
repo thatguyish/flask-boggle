@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/app.css">
+    <title>Boggle!</title>
+</head>
+
+<body>
+    <main>
+        {%block content%}
+        <section id="high-score">
+            <h2>High Score {{session['high_score']}}</h2>
+        </section>
+        <section>
+            <form action="/game">
+                <button type="submit">Play Game</button>
+            </form>
+        </section>
+        {%endblock%}
+    </main>
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="../static/app.js"></script>
+</body>
+
+</html>

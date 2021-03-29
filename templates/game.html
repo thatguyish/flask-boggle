@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block content%}
+<section id="top-bar">
+    <section id="timer">
+        <h2>Timer</h2>
+        <h2 id="timer-sec">60</h2>
+    </section>
+    <section id="score">
+        <h2 id="score-label">Score <h2 id="score-value">0</h2>
+        </h2>
+    </section>
+</section>
+<div id="grid-container" data-x="{{game_board|count}}" data-y="{{game_board|count}}">
+    {%for r in range(game_board|length)%}
+    {%for c in range(game_board|count)%}
+    <div id="x{{c}}y{{r}}" class="grid-cell">{{game_board[r][c]}}</div>
+    {%endfor%}
+    {%endfor%}
+</div>
+<h2 id="request-result"></h2>
+<form id="guess-form">
+    <input type="text" name="guess">
+    <button type="submit" id="submit-button">Submit</button>
+</form>
+{%endblock%}
